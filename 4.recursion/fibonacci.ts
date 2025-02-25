@@ -7,7 +7,6 @@ function fibonacci(n: number): number {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-// Function to print Fibonacci series up to n terms
 function printFibonacciSeries(terms: number): void {
     let series: number[] = [];
     for (let i = 1; i <= terms; i++) {
@@ -16,5 +15,4 @@ function printFibonacciSeries(terms: number): void {
     console.log(series.join(", "));
 }
 
-// Example: Print first 7 terms
-printFibonacciSeries(7);
+
