@@ -1,7 +1,7 @@
-
+//Q.1- search a target value in a sorted array
 function binarySearch(arr:number[], target:number):number {
     let start: number = 0;
-    let end: number = arr.length - 1;
+    let end: number = arr.length - 1; 
     
     while (start <= end) {
         let mid: number = Math.floor((start + end) / 2);
@@ -16,11 +16,11 @@ function binarySearch(arr:number[], target:number):number {
     }
     return -1;
 }
-
 // console.log(binarySearch([-1, 0, 1, 2, 3, 4], 0));
 
-//Search in Rotary sorted Array
+//Q.2: - Find the number of rotations in a circularly sorted array
 
+//Q.3:- Search a target element in Rotary sorted Array
 function rotarySortedArray(arr: number[], target: number): number {
     let start: number = 0;
     let end: number = arr.length - 1;
@@ -49,11 +49,13 @@ function rotarySortedArray(arr: number[], target: number): number {
     }
     return -1; // Target not found
 }
-
 // console.log(rotarySortedArray([6, 7, 8, 1, 2, 3, 4, 5, 6], 4)); // Output: 6
 
-//Peak index in Mountain Array
+//Q:4: -Find the first or last occurrence of a given number in a sorted array
 
+//Q:5: - Find the smallest missing element from a sorted array
+
+//Q:6: -Find the peak index in Mountain Array
 function peakIndexInMountainArray(arr: number[]):number {
     let start: number = 0;
     let end: number = arr.length - 1;
@@ -72,7 +74,6 @@ function peakIndexInMountainArray(arr: number[]):number {
     }
     return -1;
 }
-
 console.log(peakIndexInMountainArray([0, 3, 8, 9, 5, 2]));
  
 
