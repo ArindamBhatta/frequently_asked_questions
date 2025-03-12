@@ -1,4 +1,4 @@
-// 1st merge two array in a single array then use bubble sort
+//approach 1: - merge two array in a single array then use bubble sort
 function getMrgeShotArr(arrOne: number[], arrTwo: number[]) {
     let mergeShotArr:number[] = [];
     for (let i = 0; i< arrOne.length; i++) {      
@@ -20,6 +20,7 @@ function getMrgeShotArr(arrOne: number[], arrTwo: number[]) {
     }
     console.log(mergeShotArr);    
 }
+
 //approach 2: - using two pointer to merge two array in a single array 
 function mergeTwoArray(arrOne: number[], arrTwo: number[]) {
     let i = 0; let j = 0;
@@ -49,11 +50,62 @@ function mergeTwoArray(arrOne: number[], arrTwo: number[]) {
 
     console.log(mergeArray);    
 }
-mergeTwoArray([1, 3, 5, 7], [2, 4, 6, 8]);
-//O(n + m) where n and m are the sizes of arr1 and arr2.
+//mergeTwoArray([1, 2, 3], [2, 5, 6]); // Time Complexcity: - O(n + m)
 
-// but this approach i not okay becaused The final sorted array should not be returned by the function, but instead be stored inside the array nums1.
 
-//step 1: - using merge shot
+//From time complexcity we got the ans but not from space complexcity
+// The final sorted array should not be returned by the function, but instead be stored inside the array nums1.
+//so we can't use two pointer but we can solve if add another pointer in arrOne.
+
+/*
+approach 3: - Steps 
+arr1 = [1,2,3,0,0,0]; arr2 = [2,5,6];
+if i start with last index check which one is bigger because array is sorted in assending order.
+pointer1 = (m+n) - 1;
+pointer2 = m -1;
+pointer3 = n-1;
+*/
+
+function mergeInExistingArray(arr1:number[], m:number,  arr2:number[], n:number) {
+    let extendedarr1: number = (m + n) - 1;
+    let arr1idx = m - 1;
+    let arr2idx = n - 1;
+
+    while (arr1idx >=  0 && arr2idx >= 0) {
+        if (arr1[arr1idx] >= arr2[arr2idx]) {
+            arr1[extendedarr1] = arr1[arr1idx];
+            arr1idx--;
+            extendedarr1--;
+        } else {
+            arr1[extendedarr1] = arr2[arr2idx];
+            arr2idx--;
+            extendedarr1--;
+        } 
+    }
+
+    //collect remaining element from only 2nd array
+
+    while (arr2idx >= 0) {
+        arr1[extendedarr1] = arr2[arr2idx];
+        arr2idx--;
+        extendedarr1--;
+    }
+
+    console.log(arr1);
+}
+
+mergeInExistingArray([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
