@@ -1,22 +1,54 @@
 //Remove Duplicate in Sorted Array
-function removeDuplicatesInShortedArray(arr: number[]) {
-    if (arr.length === 0) return arr;
 
-    let j: number = 1;
-    for (let i = 1; i < arr.length - 1; i++) {
-        if (arr[i] !== arr[i + 1]) {
-            arr[j] = arr[i];
-            j++;
+function removeDuplicate(arr:number[]) {
+    let i: number = 1;
+
+    for (let j = 1; j < arr.length; j++) {
+      if (arr[j] !== arr[j-1]) {
+          arr[i] = arr[j];
+          i++;
+      }
+    }
+    arr.length = i;
+    console.log(arr);   
+}
+//removeDuplicate([1, 2, 2, 2, 3, 4, 5, 5, 5, 6]);
+
+/* 
+arr[j] !== arr[j-1]
+✅ 2 !== 1 => arr[1] = 2;
+❌ 2 === 2 => No change.
+❌ 2 === 2 => No change.
+✅ 3 !== 2 => arr[2] = 3;
+✅ 4 !== 3 => arr[3] = 4;
+✅ 5 !== 4 => arr[4] = 5;
+❌ 5 === 5 => No Change;
+❌ 5 === 5 => No Change;
+✅ 6 !== 5 => arr[5] = 6;
+[1,2,3,4,5,6]
+*/
+
+function RemoveTriplicate(arr: number[]) {
+    let i: number = 1;
+    let count: number = 1;
+
+    for (let j = 1; j < arr.length; j++){
+        if (arr[j] === arr[j-1]) {
+            count++;
+        } else {
+            count = 1;
+        }
+
+        if (count <= 2) {
+            arr[i] = arr[j];
+            i++;
         }
     }
-    
-    arr[j] = arr[arr.length];
-
-    arr.length = j;
-
-    console.log(arr);
+    arr.length = i;
+    console.log(arr);   
 }
-// removeDuplicatesInShortedArray([1, 2, 2, 3, 5, 5, 5, 6]);
+
+RemoveTriplicate([1, 2, 2, 2, 3, 4, 5, 5, 5, 6]);
 
 
 function removeDuplicatesInUnshortedArray(arr:number[]) {

@@ -31,7 +31,7 @@ function reverseArray(arr: number[]) {
  console.log(arr);
     
 }
-reverseArray([10, 8, 11, 13, 3]);
+//reverseArray([10, 8, 11, 13, 3]);
 
 
 //Q: - we have a sorted array and want to find a pair of elements that sum up to a specific target.
@@ -58,20 +58,22 @@ function findTarget(arr: number[], target: number): void {
  
 
 //Q: - Move all Trailing Zeros
-function moveZerosTwoPointers(arr:number[]) {
-    let left: number = 0;
-    for (let right:number = 0; right < arr.length; right++) {
-        if (arr[right] != 0) {
-            let temp: number = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            left++;
+function moveZerosRightHandSide(arr:number[]) {
+    let i: number = 0;
+    for (let j:number = 0; j < arr.length; j++) {
+        if (arr[j] != 0) {
+            if (i !== j) {
+                let temp: number = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            console.log(arr[i]); //if i want non zero number
+            i++;
         }
     }
-    console.log(arr);
-    
+    console.log(arr); 
 }
-// moveZerosTwoPointers([2, 0, 3, 0, 5, 0, 4, 9,]);
+ moveZerosRightHandSide([2, 0, 3, 0, 5, 0, 4, 9,]);
 
 //Q: - Container With Most Water
 function maxArea(arr: number[]) {

@@ -40,5 +40,5 @@ function mergeUsingTwoPointer(leftArray:number[], rightArray:number[]):number[] 
     return sortedArray;
 }
 
-const arr = [10, 7, 9, 8, 3, 2, 1, 6, 5, 4];
-console.log(mergeSort(arr));
+// const arr = [10, 7, 9, 8, 3, 2, 1, 6, 5, 4];
+// console.log(mergeSort(arr));
