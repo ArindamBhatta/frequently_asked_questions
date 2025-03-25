@@ -1,5 +1,5 @@
-//Q1: -Check 2nd Learges Llement 
-function checkSeconLeargest(arr: number[]) {
+//Q1: -Check 2nd Larges element 
+function checkSecondLargest(arr: number[]) {
     let maxOne:number;
     let maxTwo:number;
     if (arr[0] > arr[1]) {
@@ -19,4 +19,3 @@ function checkSeconLeargest(arr: number[]) {
     }
     console.log(maxTwo);  
 }
-//checkSeconLeargest([10, 50, 30, 25]);

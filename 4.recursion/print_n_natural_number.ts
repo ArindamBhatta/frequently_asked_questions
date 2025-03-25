@@ -1,5 +1,5 @@
 function printNo(n:number) {
-    console.log(n);
+    console.log(n); // 4, 3, 2, 1; 
     
     if (n == 1) {
         console.log(n);
@@ -7,7 +7,7 @@ function printNo(n:number) {
     }
 
     printNo(n - 1); // pauses execution at this point and starts the recursive call.
-    console.log(n); //After returning from recursion, print n again.
+    console.log(n); //After returning from recursion, 1, 2, 3, 4;
 }
 
 /* 
@@ -42,33 +42,18 @@ Step-by-Step Execution:
     => Returning from printNo(3) to printNo(4)
         Prints: 4
         Ends execution.
+
+
+PrintNo(3)
+├── calls printNo(2)
+├── calls printNo(1)
+│   │   ├── prints 1
+│   │   ├── base case met, prints 1 again, returns
+│──printNo(2) Execute print 2;
+├── printNo(3) Execute print 3;
 */
 
 
-
-
-function sumOfNumber(n:number):number {
-    if (n == 1) {
-        return n;
-    }
-    return n + sumOfNumber(n - 1);
-}
-
-/* 
-Call: sumOfNumber(4)
-    sumOfNumber(4) → 4 + sumOfNumber(3)
-Call: sumOfNumber(3)
-    sumOfNumber(3) → 3 + sumOfNumber(2)
-Call: sumOfNumber(2)
-    sumOfNumber(2) → 2 + sumOfNumber(1)
-Call: sumOfNumber(1) (Base case)
-    sumOfNumber(1) → returns 1
-
-Returning:
-sumOfNumber(2) = 2 + 1 = 3
-sumOfNumber(3) = 3 + 3 = 6
-sumOfNumber(4) = 4 + 6 = 10
-*/
 
 
 
